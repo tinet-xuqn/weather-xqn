@@ -1,13 +1,15 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+const util = require('../../utils/util.js');
 
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    loading: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -49,6 +51,20 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  onShareAppMessage(res) {
+    if (res.from === 'menu') {
+      console.log(res)
+    }
+    return {
+      title: '标题',
+      path: '/index/index'
+    }
+  },
+  getWeather() {
+    wx.navigateTo({
+      url: '../weather/weather'
     })
   }
 })

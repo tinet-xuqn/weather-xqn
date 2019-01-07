@@ -14,6 +14,31 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const greet = date => {
+  const hour = date.getHours()
+  let message = ''
+  switch (true) {
+    case hour > 5 && hour <= 9:
+      message = '早上'
+      break;
+    case hour > 9 && hour <= 12:
+      message = '上午'
+      break;
+    case hour > 12 && hour <= 14:
+      message = '中午'
+      break;
+    case hour > 14 && hour <= 18:
+      message = '下午'
+      break;
+    default:
+      message = '晚上'
+      break;
+  }
+
+  return `${message}好`
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  greet
 }

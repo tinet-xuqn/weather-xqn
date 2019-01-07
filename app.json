@@ -1,12 +1,17 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/weather/weather",
+    "pages/search_city/city"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "你好啊,靓仔!",
     "navigationBarTextStyle":"black"
+  },
+  "networkTimeout":{
+    "request":3000
   }
 }

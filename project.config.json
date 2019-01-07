@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
 	"appid": "wxe8eb9f39e91760a9",
-	"projectname": "ac%E6%96%87%E7%AB%A0",
+	"projectname": "%E4%B8%80%E4%BD%8D%E9%9D%93%E4%BB%94%E5%81%B6%E7%84%B6%E8%B7%AF%E8%BF%87",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -21,13 +21,30 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "天气",
+					"pathName": "pages/weather/weather",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选址",
+					"pathName": "pages/search_city/city",
+					"query": ""
+				}
+			]
 		}
 	}
 }
