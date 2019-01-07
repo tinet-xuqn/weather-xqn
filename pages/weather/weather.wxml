@@ -8,8 +8,8 @@
 
 	<!-- 地址 -->
 	<view class="user-address">
-		<view>{{address}}</view>
 		<navigator url="../search_city/city">
+			<text>{{address}}</text>
 			<image class="address-img" src="../images/map.png"></image>
 		</navigator>
 	</view>
