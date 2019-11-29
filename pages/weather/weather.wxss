@@ -20,6 +20,8 @@
 }
 
 .userinfo-avatar {
+	display: block;
+	overflow: hidden;
   width: 80rpx;
   height: 80rpx;
   margin: 10rpx;

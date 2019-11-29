@@ -40,9 +40,9 @@
 	<view class="weather-hourly">
 		<view class="title">未来24小时天气</view>
 		<swiper indicator-dots="{{true}}">
-		  <block wx:for="{{hourlyWeather}}" wx:for-index="hourlyIndex" wx:for-item="hourly" wx:key="{{hourlyIndex}}">
+		  <block wx:for="{{hourlyWeather}}" wx:for-index="hourlyIndex" wx:for-item="hourly" wx:key="hourlyIndex">
 		    <swiper-item class="hourly-item">
-		    	<view class="hourly" wx:for="{{hourly}}" wx:key="{{item.time}}">
+		    	<view class="hourly" wx:for="{{hourly}}" wx:key="time">
 		    		<text>{{item.time}}</text>
 		    		<text>{{item.cond_txt}}</text>
 		    		<image src="../images/cond-icon-heweather/{{item.cond_code}}.png" class="slide-image"/>
@@ -59,7 +59,7 @@
 	<view  class="weather-daily">
 		<view class="title">未来3天天气</view>
 		<view class="daily-item">
-			<block wx:for="{{dailyWeather}}" wx:key="{{item.date}}">
+			<block wx:for="{{dailyWeather}}" wx:key="time">
 				<view class="daily">
 					<text>{{item.date}}</text>
 	    		<text>{{item.cond_txt_d}}</text>
@@ -78,7 +78,7 @@
 	<view class="weather-lifestyle">
 		<view class="title">生活指数</view>
 		<view class="lifestyle-item">
-			<block wx:for="{{lifestyle}}" wx:key="{{item.type}}">
+			<block wx:for="{{lifestyle}}" wx:key="type">
 				<view class="lifestyle">
 					<image src="../images/lifestyle/lifestyle_{{item.type}}.png" class="slide-image"/>
 					<view class="lifestyle-text">

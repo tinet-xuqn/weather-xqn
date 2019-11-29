@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/weather/weather",
     "pages/logs/logs",
     "pages/search_city/city"
@@ -9,13 +9,14 @@
       "desc": "你的位置信息将用于获取天气信息"
     }
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "你好啊,靓仔!",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-  "networkTimeout":{
-    "request":3000
-  }
+  "networkTimeout": {
+    "request": 3000
+  },
+  "sitemapLocation": "sitemap.json"
 }
