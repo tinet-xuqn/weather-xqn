@@ -15,7 +15,7 @@
 			<button size="mini" bindtap="goWeather">定位
 				<image src="../images/map1.png" />
 			</button>
-			<block wx:for="{{cityList}}" wx:key="{{item.id}}">
+			<block wx:for="{{cityList}}" wx:key="id">
 				<button size="mini" data-loc="{{item}}" bindtap="chooseCity">{{item.name}}</button>
 			</block>
 		</view>
