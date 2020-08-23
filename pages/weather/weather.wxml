@@ -2,8 +2,8 @@
 	<image class="backgroud-img" src="../images/background/{{backgroundImg}}.jpg"></image>
 	<!-- 用户信息 -->
 	<view class="userinfo">
-		<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-		<text class="userinfo-nickname">{{time}}，{{userInfo.nickName}}</text>
+		<open-data class="userinfo-avatar" type="userAvatarUrl" background-size="cover"></open-data>
+		<text class="userinfo-nickname">{{time}}，</text><open-data class="userinfo-nickname" type="userNickName"></open-data>
 	</view>
 
 	<!-- 地址 -->
