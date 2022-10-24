@@ -53,6 +53,12 @@ Page({
     this.getLocation();
     wx.stopPullDownRefresh();
   },
+  onShareAppMessage() {
+    return {
+      title: '今日天气',
+      path: '/pages/weather/weather'
+    }
+  },
 
   getLocation() {
     let that = this;
