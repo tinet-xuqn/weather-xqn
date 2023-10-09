@@ -95,23 +95,23 @@ Page({
     let that = this;
     // 获取实时天气
     api.getWeatherNow(data).then(res => {
-      that.setWeatherNow(res.data.HeWeather6[0]);
-      that.setBackgroundImg(that.data.weatherNow.cond_code);
+      that.setWeatherNow(res.data);
+      that.setBackgroundImg(that.data.now.icon);
     });
 
     // 获取未来24小时
     api.getWeatherHourly(data).then(res => {
-      that.setWeatherHourly(res.data.HeWeather6[0].hourly);
+      that.setWeatherHourly(res.data.hourly.filter((item, index) => index % 3 === 0))
     });
 
     // 获取近3天
     api.getWeatherDaily(data).then(res => {
-      that.setWeatherDaily(res.data.HeWeather6[0].daily_forecast);
+      that.setWeatherDaily(res.data.daily);
     });
 
     // 生活指数
     api.getWeatherLifestyle(data).then(res => {
-      that.setLifestyle(res.data.HeWeather6[0].lifestyle);
+      that.setLifestyle(res.data.daily);
     });
   },
 
@@ -129,22 +129,22 @@ Page({
   setWeatherNow(data) {
     this.setData({
       weatherNow: {
-        tmp: data.now.tmp,
-        cond_txt: data.now.cond_txt,
-        cond_code: data.now.cond_code,
-        wind_dir: data.now.wind_dir,
-        wind_sc: data.now.wind_sc,
-        hum: data.now.hum,
-        pres: data.now.pres,
-        pcpn: data.now.pcpn,
-        loc: data.update.loc.substring(11, 16)
+        tmp: data.now.temp,
+        cond_txt: data.now.text,
+        cond_code: data.now.icon,
+        wind_dir: data.now.windDir,
+        wind_sc: data.now.windScale,
+        hum: data.now.humidity,
+        pres: data.now.pressure,
+        pcpn: data.now.precip,
+        loc: data.now.obsTime.substring(11, 16)
       }
     });
   },
 
   setWeatherHourly(data) {
     data.map(item => {
-      item.time = item.time.substring(11, 16);
+      item.time = item.fxTime.substring(11, 16);
     });
     this.setData({
       hourlyWeather: [data.slice(0, 4), data.slice(4)]
@@ -154,7 +154,7 @@ Page({
   setWeatherDaily(data) {
     data = data.slice(0, 3);
     data.map(item => {
-      item.date = item.date
+      item.date = item.fxDate
         .split('-')
         .slice(1)
         .join('/');
@@ -165,8 +165,11 @@ Page({
   },
 
   setLifestyle(data) {
+    data = data.filter(item => {
+      return imgCofig.lifestyleImgList[item.type]
+    })
     data.forEach(item => {
-      item.typeTxt = imgCofig.lifestyleImgList[item.type].txt;
+      item.imgSrc = imgCofig.lifestyleImgList[item.type].src;
     });
     this.setData({
       lifestyle: data

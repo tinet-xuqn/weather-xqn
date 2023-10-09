@@ -44,11 +44,11 @@
 		    <swiper-item class="hourly-item">
 		    	<view class="hourly" wx:for="{{hourly}}" wx:key="time">
 		    		<text>{{item.time}}</text>
-		    		<text>{{item.cond_txt}}</text>
-		    		<image src="../images/cond-icon-heweather/{{item.cond_code}}.png" class="slide-image"/>
-		    		<text>{{item.tmp}}℃</text>
-		    		<text>{{item.wind_dir}}</text>
-		    		<text>风力{{item.wind_sc}}级</text>
+		    		<text>{{item.text}}</text>
+		    		<image src="../images/cond-icon-heweather/{{item.icon}}.png" class="slide-image"/>
+		    		<text>{{item.temp}}℃</text>
+		    		<text>{{item.windDir}}</text>
+		    		<text>风力{{item.windScale}}级</text>
 		    	</view>
 		    </swiper-item>
 		  </block>
@@ -62,13 +62,13 @@
 			<block wx:for="{{dailyWeather}}" wx:key="date">
 				<view class="daily">
 					<text>{{item.date}}</text>
-	    		<text>{{item.cond_txt_d}}</text>
-	    		<image src="../images/cond-icon-heweather/{{item.cond_code_d}}.png" class="slide-image"/>
-	    		<text>{{item.tmp_min}}℃~{{item.tmp_max}}℃</text>
-	    		<image src="../images/cond-icon-heweather/{{item.cond_code_n}}.png" class="slide-image"/>
-	    		<text>{{item.cond_txt_n}}</text>
-	    		<text>{{item.wind_dir}}</text>
-	    		<text>风力{{item.wind_sc}}级</text>
+	    		<text>{{item.textDay}}</text>
+	    		<image src="../images/cond-icon-heweather/{{item.iconDay}}.png" class="slide-image"/>
+	    		<text>{{item.tempMin}}℃~{{item.tempMax}}℃</text>
+	    		<image src="../images/cond-icon-heweather/{{item.iconNight}}.png" class="slide-image"/>
+	    		<text>{{item.textNight}}</text>
+	    		<text>{{item.windDirDay}}</text>
+	    		<text>风力{{item.windScaleDay}}级</text>
 				</view>
 			</block>
 		</view>
@@ -80,10 +80,10 @@
 		<view class="lifestyle-item">
 			<block wx:for="{{lifestyle}}" wx:key="type">
 				<view class="lifestyle">
-					<image src="../images/lifestyle/lifestyle_{{item.type}}.png" class="slide-image"/>
+					<image src="../images/lifestyle/{{item.imgSrc}}" class="slide-image"/>
 					<view class="lifestyle-text">
-						<text>{{item.typeTxt}}：{{item.brf}}</text>
-						<text class="detail">{{item.txt}}</text>
+						<text>{{item.name}}：{{item.category}}</text>
+						<text class="detail">{{item.text}}</text>
 					</view>
 				</view>
 			</block>

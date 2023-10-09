@@ -82,35 +82,35 @@ const bgImgList = [
 
 
 const lifestyleImgList = {
-  comf: {
+  8: {
     src: `lifestyle_comf.png`,
     txt: '舒适度指数'
   },
-  drsg: {
+  3: {
     src: `lifestyle_drsg.png`,
     txt: '穿衣指数'
   },
-  flu: {
+  9: {
     src: `lifestyle_flu.png`,
     txt: '感冒指数'
   },
-  sport: {
+  1: {
     src: `lifestyle_sport.png`,
     txt: '运动指数'
   },
-  trav: {
+  6: {
     src: `lifestyle_trav.png`,
     txt: '旅游指数'
   },
-  uv: {
+  5: {
     src: `lifestyle_uv.png`,
     txt: '紫外线指数'
   },
-  cw: {
+  2: {
     src: `lifestyle_cw.png`,
     txt: '洗车指数'
   },
-  air: {
+  14: {
     src: `lifestyle_air.png`,
     txt: '晾晒指数'
   }

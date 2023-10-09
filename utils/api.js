@@ -69,16 +69,20 @@ const geocoder = function(address) {
 
 
 // 和风天气api
-const BASE_URL = 'https://free-api.heweather.net/s6/'
+const BASE_URL = 'https://devapi.qweather.com/v7/'
 
-const getWeather = function({ type,name },option) {
+const getWeather = function({ type,name }, option) {
+  const data = {
+    location: option.longitude + ',' + option.latitude,
+    key: '71c8d39e87c84eb2a819c1f7a0e07bce'
+  }
+  if (option.hasOwnProperty('type')) {
+    data.type = option.type
+  }
 	return new Promise((resolve,reject) => {
 		wx.request({
 			url: BASE_URL + type,
-			data: {
-				location: option.longitude + ',' + option.latitude,
-				key: 'd469334ef67548578d65268f148b046f'
-			},
+			data,
 			success(res) {
 				resolve(res)
 			},
@@ -99,19 +103,19 @@ const getWeatherNow = function(option) {
 }
 
 const getWeatherHourly = function(option) {
-	return getWeather({ type: 'weather/hourly',name: '未来24小时' },option)
+	return getWeather({ type: 'weather/24h',name: '未来24小时' },option)
 }
 
 const getWeatherDaily = function(option) {
-	return getWeather({ type: 'weather/forecast',name: '近3天' },option)
+	return getWeather({ type: 'weather/3d',name: '近3天' },option)
 }
 
 const getWeatherLifestyle = function(option) {
-	return getWeather({ type: 'weather/lifestyle',name: '生活指数' },option)
+	return getWeather({ type: 'indices/1d',name: '生活指数' },{ ...option, type: 0 })
 }
 
 const getAirNow = function(option) {
-	return getWeather({ type: 'air/now',name: '空气质量' },option)
+	return getWeather({ type: 'air/now',name: '空气质量' }, option)
 }
 
 
