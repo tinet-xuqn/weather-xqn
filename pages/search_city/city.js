@@ -23,7 +23,7 @@ Page({
       name: data.fullname ? data.fullname : data.title
     };
     city = JSON.stringify(city);
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../weather/weather?city=' + city
     });
   },

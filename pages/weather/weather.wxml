@@ -18,7 +18,9 @@
 	<view class="weather-now">
 		<view class="now-tmp">{{weatherNow.tmp}}<sup>℃</sup></view>
 		<view class="now-cond">
-			<image src="../images/cond-icon-heweather/{{weatherNow.cond_code}}.png"></image>
+			<!-- <image src="../images/cond-icon-heweather/{{weatherNow.cond_code}}.png"></image> -->
+      <i class="qi-{{weatherNow.cond_code}}"></i>
+
 			<text>{{weatherNow.cond_txt}}</text>
 		</view>
 		<view class="item-wind">
@@ -45,7 +47,8 @@
 		    	<view class="hourly" wx:for="{{hourly}}" wx:key="time">
 		    		<text>{{item.time}}</text>
 		    		<text>{{item.text}}</text>
-		    		<image src="../images/cond-icon-heweather/{{item.icon}}.png" class="slide-image"/>
+		    		<!-- <image src="../images/cond-icon-heweather/{{item.icon}}.png" class="slide-image"/> -->
+            <i class="qi-{{item.icon}}"></i>
 		    		<text>{{item.temp}}℃</text>
 		    		<text>{{item.windDir}}</text>
 		    		<text>风力{{item.windScale}}级</text>
@@ -63,9 +66,12 @@
 				<view class="daily">
 					<text>{{item.date}}</text>
 	    		<text>{{item.textDay}}</text>
-	    		<image src="../images/cond-icon-heweather/{{item.iconDay}}.png" class="slide-image"/>
+          <i class="qi-{{item.iconDay}}"></i>
+	    		<!-- <image src="../images/cond-icon-heweather/{{item.iconDay}}.png" class="slide-image"/> -->
 	    		<text>{{item.tempMin}}℃~{{item.tempMax}}℃</text>
-	    		<image src="../images/cond-icon-heweather/{{item.iconNight}}.png" class="slide-image"/>
+	    		<!-- <image src="../images/cond-icon-heweather/{{item.iconNight}}.png" class="slide-image"/> -->
+          
+          <i class="qi-{{item.iconNight}}"></i>
 	    		<text>{{item.textNight}}</text>
 	    		<text>{{item.windDirDay}}</text>
 	    		<text>风力{{item.windScaleDay}}级</text>

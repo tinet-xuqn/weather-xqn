@@ -96,7 +96,7 @@ Page({
     // 获取实时天气
     api.getWeatherNow(data).then(res => {
       that.setWeatherNow(res.data);
-      that.setBackgroundImg(that.data.now.icon);
+      that.setBackgroundImg(res.data.now.icon);
     });
 
     // 获取未来24小时

@@ -6,12 +6,12 @@ const bgImgList = [
 },
 {
   name: 'sunny',
-  codes: [100, 900],
+  codes: [100, 900, 150],
   color: '#7bc6ed'
 },
 {
   name: 'cloudy',
-  codes: [101, 102, 103],
+  codes: [101, 102, 103, 151, 152, 153],
   color: '#4b97d3'
 },
 {
@@ -31,7 +31,7 @@ const bgImgList = [
 },
 {
   name: 'rain',
-  codes: [300, 302, 305, 309, 399],
+  codes: [300, 302, 305, 309, 399, 350],
   color: '#1186b1'
 },
 {
@@ -46,12 +46,12 @@ const bgImgList = [
 },
 {
   name: 'heavy_rain',
-  codes: [301, 303, 307, 308, 310, 311, 312, 316, 317, 318],
+  codes: [301, 303, 307, 308, 310, 311, 312, 316, 317, 318, 351],
   color: '#7f95a2'
 },
 {
   name: 'freezing_rain',
-  codes: [313, 404, 405, 406],
+  codes: [313, 404, 405, 406, 456],
   color: '#2f81cd'
 },
 {
@@ -61,7 +61,7 @@ const bgImgList = [
 },
 {
   name: 'moderate_snow',
-  codes: [401, 407, 409, 499],
+  codes: [401, 407, 409, 499, 457],
   color: '#5cb4e4'
 },
 {
